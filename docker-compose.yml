@@ -1,0 +1,67 @@
+networks:
+  ticket-tech-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.51.0.0/16
+volumes:
+  ticket_tech_pgdata:
+
+services:
+  ticket-tech-db:
+    image: postgres:15
+    container_name: ticket-tech-db
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d
+      - ticket_tech_pgdata:/var/lib/postgresql/data
+    networks:
+      - ticket-tech-network
+
+  discovery-service:
+    build:
+      context: ./discovery-service
+    ports:
+      - "8261:8261"
+    networks:
+      - ticket-tech-network
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+
+  gateway-service:
+    build:
+      context: ./gateway-service
+    ports:
+      - "6666:6666"
+    networks:
+      - ticket-tech-network
+    depends_on:
+      - discovery-service
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - "8020:8020"
+    networks:
+      - ticket-tech-network
+    depends_on:
+      - discovery-service
+      - gateway-service
+      - ticket-tech-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://ticket-tech-db:5432/user_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+
