@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.fiscontrol</groupId>
+    <groupId>com.ticket-tech</groupId>
     <artifactId>gateway-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gateway-service</name>

@@ -12,7 +12,9 @@
     <modules>
         <module>discovery-service</module>
         <module>gateway-service</module>
-        <module>user-service</module>
+        <module>auth-service</module>
+        <module>language-service</module>
+        <module>administration-service</module>
     </modules>
 
     <properties>
@@ -20,5 +22,19 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>google-maven-central</id>
+            <url>https://plugins.gradle.org/m2/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>gcp-repo</id>
+            <url>https://maven.google.com</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

@@ -1,5 +1,5 @@
 server:
-  port: 7777
+  port: 6666
 
 logging:
   level:
@@ -38,4 +38,4 @@ eureka:
     preferIpAddress: false
   client:
     service-url:
-      defaultZone: http://discovery-service:8961/eureka
+      defaultZone: http://discovery-service:8261/eureka

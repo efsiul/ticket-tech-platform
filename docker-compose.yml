@@ -12,9 +12,8 @@ services:
     image: postgres:15
     container_name: ticket-tech-db
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5435:5432"
     volumes:
@@ -22,6 +21,12 @@ services:
       - ticket_tech_pgdata:/var/lib/postgresql/data
     networks:
       - ticket-tech-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
 
   discovery-service:
     build:
@@ -49,9 +54,9 @@ services:
         limits:
           memory: 1g
 
-  user-service:
+  auth-service:
     build:
-      context: ./user-service
+      context: ./auth-service
     ports:
       - "8020:8020"
     networks:
@@ -61,7 +66,44 @@ services:
       - gateway-service
       - ticket-tech-db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://ticket-tech-db:5432/user_db
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:postgresql://ticket-tech-db:5432/auth_db
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      SECRET: ${SECRET}
+      EXP_TIME: ${EXP_TIME}
 
+  language-service:
+    build:
+      context: ./language-service
+    ports:
+      - "8021:8021"
+    networks:
+      - ticket-tech-network
+    depends_on:
+      - discovery-service
+      - gateway-service
+      - ticket-tech-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://ticket-tech-db:5432/language_db
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      SECRET: ${SECRET}
+      EXP_TIME: ${EXP_TIME}
+
+  administration-service:
+    build:
+      context: ./administration-service
+    ports:
+      - "8022:8022"
+    networks:
+      - ticket-tech-network
+    depends_on:
+      - discovery-service
+      - gateway-service
+      - ticket-tech-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://ticket-tech-db:5432/admin_db
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      SECRET: ${SECRET}
+      EXP_TIME: ${EXP_TIME}

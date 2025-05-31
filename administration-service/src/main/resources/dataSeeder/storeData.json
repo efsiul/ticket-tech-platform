@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "name":"HexaQuantum Store",
+    "numberStore": "1",
+    "idCompany":"1",
+    "idSubsidiary": "1",
+    "address": "calle 1 # 01-01",
+    "phone":"+572222222",
+    "contactPerson": "David Herrera",
+    "mail": "david@ejemplo.com",
+    "state": true,
+    "latitude": "4546",
+    "longitude":"798789798"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id":"1",
+    "name":"Antioquia",
+    "idType":"1",
+    "idDad":"",
+    "idCountry":"61"
+  },
+  {
+    "id":"2",
+    "name":"Medellin",
+    "idType":"2",
+    "idDad":"1",
+    "idCountry":"61"
+  },
+  {
+    "id":"3",
+    "name":"San antonio de prado",
+    "idType":"3",
+    "idDad":"2",
+    "idCountry":"61"
+  }
+]

@@ -3,17 +3,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.ticket-tech</groupId>
     <artifactId>discovery-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
     <name>discovery-service</name>
-    <description>Discovery service with Eureka</description>
+    <description>discovery-service</description>
 
     <parent>
-        <groupId>com.fiscontrol</groupId>
-        <artifactId>fiscontrol-platform</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.4</version>
+        <relativePath/>
     </parent>
 
     <properties>
@@ -83,18 +83,17 @@
             </plugin>
         </plugins>
     </build>
-
     <pluginRepositories>
         <pluginRepository>
-            <id>google-maven-central</id>
-            <url>https://plugins.gradle.org/m2/</url>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
         </pluginRepository>
         <pluginRepository>
             <id>gcp-repo</id>
             <url>https://maven.google.com</url>
         </pluginRepository>
     </pluginRepositories>
-
     <profiles>
         <profile>
             <id>jib</id>
