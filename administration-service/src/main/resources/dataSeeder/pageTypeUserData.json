@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "pagesIds": [1],
+    "idTypeUser": 1,
+    "idUser": 1,
+    "isCreate": true,
+    "isUpdate": true,
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "pagesIds": [2],
+    "idTypeUser": 1,
+    "idUser": "1",
+    "isCreate": true,
+    "isUpdate": true,
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "pagesIds": [3, 4, 5, 6],
+    "idTypeUser": 1,
+    "idUser": 1,
+    "isCreate": true,
+    "isUpdate": true,
+    "isActive": true
+  }
+]

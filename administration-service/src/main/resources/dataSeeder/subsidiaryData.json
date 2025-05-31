@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "HexaQuantum Subsidiary",
+    "idCompany": "1",
+    "nit": "123",
+    "address": "cl 1 # 1 - 1",
+    "contactPerson": "Anderson",
+    "phone": "+5712121221",
+    "mail": "ander@ejemplo.com",
+    "state": true,
+    "decimalsNumber": 2,
+    "roundingType": "STANDARD"
+  }
+]

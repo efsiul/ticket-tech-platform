@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "npage": "dashboard",
+    "name": "Dashboard",
+    "icon": "HomeOutline",
+    "idUser": 1,
+    "idModule": 1,
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "npage": "user",
+    "name": "User",
+    "icon": "AccountCogOutline",
+    "idUser": 1,
+    "idModule": 1,
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "npage": "pages_by_user_type",
+    "name": "Pages by User Type",
+    "icon": "AccountCogOutline",
+    "idModule": 1,
+    "idUser": 1,
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "npage": "subsidiary",
+    "name": "Subsidiary",
+    "icon": "AccountCogOutline",
+    "idModule": 1,
+    "idUser": 1,
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "npage": "store",
+    "name": "Store",
+    "icon": "Store",
+    "idModule": 1,
+    "idUser": 1,
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "npage": "company",
+    "icon": "CubeOutline",
+    "name": "Company",
+    "idModule": 1,
+    "idUser": 1,
+    "isActive": true
+  }
+]

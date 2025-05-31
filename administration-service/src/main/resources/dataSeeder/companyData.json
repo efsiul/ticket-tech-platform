@@ -1,0 +1,14 @@
+[
+  {
+    "id":1,
+    "name":"HexaQuantum",
+    "nit":"123",
+    "address":"cl 1#1-1",
+    "contactPerson":"Anderson",
+    "phone":"+57123456",
+    "mail":"abc@abc.com",
+    "idUser": "1",
+    "state":true,
+    "creation": "1900-01-01T00:00:00"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id":"1",
+    "idCountry":"1",
+    "name":"Departamento",
+    "order":"1"
+  },
+  {
+    "id":"2",
+    "idCountry":"1",
+    "name":"Ciudad/Municipio",
+    "order":"2"
+  },
+  {
+    "id":"3",
+    "idCountry":"1",
+    "name":"Corregimiento/Barrio",
+    "order":"3"
+  }
+]

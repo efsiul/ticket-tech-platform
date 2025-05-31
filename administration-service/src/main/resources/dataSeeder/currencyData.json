@@ -1,0 +1,10 @@
+[
+  {
+    "id":"1",
+    "name":"Peso Colombiano",
+    "symbol":"$",
+    "code":"COP",
+    "idUser":"1",
+    "state":true
+  }
+]

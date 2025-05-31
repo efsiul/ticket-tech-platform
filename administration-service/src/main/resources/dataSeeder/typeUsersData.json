@@ -1,0 +1,10 @@
+[
+  {
+    "id":1,
+    "name":"Administrator",
+    "isActive": true,
+    "idUser": 1,
+    "idSubsidiary": 1,
+    "idCompany": 1
+  }
+]

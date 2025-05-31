@@ -16,7 +16,7 @@ RUN apk add --no-cache tzdata \
     && echo "America/Guayaquil" > /etc/timezone \
 
 # Expone el puerto en el que la aplicación se ejecutará
-EXPOSE 7777
+EXPOSE 6666
 
 # Comando para ejecutar la aplicación
 CMD ["java", "-jar", "app.jar"]
