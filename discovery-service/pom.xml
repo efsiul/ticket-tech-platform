@@ -23,7 +23,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <CONTAINER_REGISTRY>demo</CONTAINER_REGISTRY>
-        <REGISTRY_PORT>8961</REGISTRY_PORT>
+        <REGISTRY_PORT>8261</REGISTRY_PORT>
         <IMAGE_TAG>latest</IMAGE_TAG>
     </properties>
 
